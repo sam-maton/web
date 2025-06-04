@@ -4,6 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSS Playground - Bento Grid</title>
+    <style>
+      body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2%;
+      }
+
+      .grid-container {
+        display: grid;
+        gap: 1em;
+        grid-template-columns: 200px 200px 200px 200px;
+        grid-template-rows: 200px 200px;
+        grid-template-areas:
+          'box-1 box-1 box-2 box-3'
+          'box-1 box-1 box-4 box-5';
+      }
+
+      @media (max-width: 800px) {
+        .grid-container {
+          grid-template-columns: 200px 200px 200px;
+          grid-template-rows: 200px 200px 200px;
+          grid-template-areas:
+            'box-1 box-1 box-2'
+            'box-1 box-1 box-3'
+            'box-4 box-5 box-5';
+        }
+      }
+
+      .box {
+        background-color: #0071ff;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <div class="grid-container">
+      <div class="box" style="grid-area: box-1"></div>
+      <div class="box" style="grid-area: box-2"></div>
+      <div class="box" style="grid-area: box-3"></div>
+      <div class="box" style="grid-area: box-4"></div>
+      <div class="box" style="grid-area: box-5"></div>
+    </div>
+  </body>
 </html>
