@@ -16,8 +16,8 @@
       .grid-container {
         display: grid;
         gap: 1em;
-        grid-template-columns: 200px 200px 200px 200px;
-        grid-template-rows: 200px 200px;
+        grid-auto-columns: 200px;
+        grid-auto-rows: 200px;
         grid-template-areas:
           'box-1 box-1 box-2 box-3'
           'box-1 box-1 box-4 box-5';
@@ -25,8 +25,6 @@
 
       @media (max-width: 900px) {
         .grid-container {
-          grid-template-columns: 200px 200px 200px;
-          grid-template-rows: 200px 200px 200px;
           grid-template-areas:
             'box-1 box-1 box-2'
             'box-1 box-1 box-3'
@@ -36,8 +34,6 @@
 
       @media (max-width: 660px) {
         .grid-container {
-          grid-template-columns: 200px 200px;
-          grid-template-rows: 200px 200px 200px 200px;
           grid-template-areas:
             'box-1 box-1'
             'box-1 box-1'
@@ -48,6 +44,7 @@
 
       .box {
         background-color: #0071ff;
+        border-radius: 1rem;
       }
     </style>
   </head>
