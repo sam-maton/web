@@ -1,6 +1,7 @@
 :root {
   --base: #11121a;
   --line: #42434a;
+  --hover: #222533;
   --text: #e6e6ef;
   --accent-clr: #5e63ff;
   --secondary-text: #b0b3c1;
@@ -90,4 +91,32 @@ main p {
   background: none;
   border: none;
   cursor: pointer;
+}
+
+#sidebar svg {
+  flex-shrink: 0;
+  fill: var(--text);
+}
+
+#sidebar a span,
+#sidebar .dropdown-btn span {
+  flex-grow: 1;
+}
+
+#sidebar a:hover,
+#sidebar .dropdown-btn:hover {
+  background-color: var(--hover);
+}
+
+#sidebar .sub-menu {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: 300ms ease-in-out;
+
+  > div {
+    overflow: hidden;
+  }
+}
+#sidebar .sub-menu.show {
+  grid-template-rows: 1fr;
 }
