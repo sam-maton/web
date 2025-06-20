@@ -128,3 +128,25 @@ main p {
 .rotate svg:last-child {
   rotate: 180deg;
 }
+
+#sidebar .sub-menu a {
+  margin-left: 2em;
+}
+
+#toggle-btn {
+  margin-left: auto;
+  margin-top: 0.75em;
+  padding: 0.25em;
+  border: none;
+  border-radius: 0.5em;
+  background: none;
+  cursor: pointer;
+
+  svg {
+    transition: rotate 150ms ease;
+  }
+}
+
+#toggle-btn:hover {
+  background-color: var(--hover);
+}
