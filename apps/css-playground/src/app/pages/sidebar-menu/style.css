@@ -120,3 +120,11 @@ main p {
 #sidebar .sub-menu.show {
   grid-template-rows: 1fr;
 }
+
+.dropdown-btn svg {
+  transition: 300ms ease;
+}
+
+.rotate svg:last-child {
+  rotate: 180deg;
+}
