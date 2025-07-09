@@ -1,3 +1,6 @@
+body {
+  perspective: 500px;
+}
 span {
   height: 300px;
   width: 300px;
@@ -5,10 +8,10 @@ span {
   background-color: #f0f0f0;
   border: 1px solid #ccc;
   border-radius: 1rem;
-  margin-top: 200px;
+  margin-top: 50px;
   padding: 0 1rem;
   transition: transform 2s;
-  transform-origin: top left;
+  /* transform-origin: top left; */
 }
 
 span:hover {
@@ -17,8 +20,10 @@ span:hover {
   /* transform: translateY(-500px); */
   /* transform: translate(-200px, 200px); */
   /* transform: scale(1.5); */
-  transform: rotate(45deg);
+  /* transform: rotate(45deg); */
   /* transform: skew(20deg); */
+  /* transform: translateZ(300px); */
+  transform: rotateX(20deg);
 }
 
 /* .inner {
