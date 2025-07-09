@@ -1,0 +1,66 @@
+body {
+  margin-top: 5rem;
+}
+a {
+  --button-color: #272727;
+  display: block;
+  text-decoration: none;
+  color: var(--button-color);
+  font-size: 45px;
+  border: 5px solid var(--button-color);
+  padding: 40px 80px;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.rotate-button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff200;
+  z-index: -1;
+  transform-origin: bottom left;
+  transform: rotate(-90deg);
+  transition: transform 0.5s ease-in-out;
+}
+
+.rotate-button:hover:before {
+  transform: rotate(0deg);
+}
+
+.swipe-button {
+  --button-color: #4a1d4a;
+  transition: color 1s ease-in-out;
+}
+
+.swipe-button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--button-color);
+  z-index: -1;
+  transform: translateX(-100%);
+  transition: transform 1s;
+}
+
+.swipe-button:hover {
+  color: #fff;
+}
+
+.swipe-button:hover:before {
+  transform: translateX(0);
+}
+
+.swipe-button:active:before {
+  background-color: #351435;
+}
+
+.split-button {
+}
