@@ -1,0 +1,30 @@
+span {
+  height: 300px;
+  width: 300px;
+  display: block;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  margin-top: 200px;
+  padding: 0 1rem;
+  transition: transform 2s;
+  transform-origin: top left;
+}
+
+span:hover {
+  /* transform: translateX(500px); */
+  /* transform: translateX(-500px); */
+  /* transform: translateY(-500px); */
+  /* transform: translate(-200px, 200px); */
+  /* transform: scale(1.5); */
+  transform: rotate(45deg);
+  /* transform: skew(20deg); */
+}
+
+/* .inner {
+  transition: transform 2s;
+}
+
+span:hover .inner {
+  transform: rotate(-180deg);
+} */

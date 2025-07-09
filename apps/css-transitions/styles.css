@@ -10,25 +10,9 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
+  font-family: sans-serif;
 }
 body {
   justify-items: center;
   align-content: center;
-}
-
-/* Button styles */
-button {
-  padding: 1rem;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 0.25rem;
-  cursor: pointer;
-
-  transition-property: background-color;
-  transition-duration: 0.2s;
-}
-
-button:hover {
-  background-color: #0056b3;
 }
