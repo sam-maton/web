@@ -23,7 +23,7 @@ span:hover {
   /* transform: rotate(45deg); */
   /* transform: skew(20deg); */
   /* transform: translateZ(300px); */
-  transform: rotateX(20deg);
+  transform: rotate3D(1, -1, 0, 20deg);
 }
 
 /* .inner {
