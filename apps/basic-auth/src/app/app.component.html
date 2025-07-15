@@ -1,0 +1,52 @@
+<div class="container">
+  <h1>{{ title }} App</h1>
+
+  <div class="api-section">
+    <h2>Backend Connection Test</h2>
+
+    <button (click)="fetchData()" [disabled]="loading" class="fetch-btn">
+      {{ loading ? 'Loading...' : 'Fetch Data from API' }}
+    </button>
+
+    <div *ngIf="loading" class="loading">Loading data from backend...</div>
+
+    <div *ngIf="error" class="error">
+      {{ error }}
+    </div>
+
+    <div *ngIf="apiData && !loading" class="success">
+      <h3>✅ Successfully connected to backend!</h3>
+      <p><strong>API Response:</strong> {{ apiData.message }}</p>
+    </div>
+  </div>
+
+  <div class="database-section">
+    <h2>SQLite Database with Drizzle ORM</h2>
+
+    <div class="button-group">
+      <button (click)="seedDatabase()" [disabled]="loading" class="seed-btn">
+        {{ loading ? 'Seeding...' : 'Seed Database' }}
+      </button>
+
+      <button (click)="fetchUsers()" [disabled]="loading" class="fetch-btn">
+        {{ loading ? 'Loading...' : 'Fetch Users' }}
+      </button>
+    </div>
+
+    <div *ngIf="users.length > 0" class="users-list">
+      <h3>👥 Users from Database</h3>
+      <div class="user-cards">
+        <div *ngFor="let user of users" class="user-card">
+          <h4>{{ user.name }}</h4>
+          <p><strong>Email:</strong> {{ user.email }}</p>
+          <p><strong>ID:</strong> {{ user.id }}</p>
+          <p>
+            <strong>Created:</strong> {{ user.created_at | date : 'medium' }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
+</div>
