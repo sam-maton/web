@@ -1,37 +1,19 @@
-import { drizzle } from 'drizzle-orm/better-sqlite3';
-import Database from 'better-sqlite3';
-import { join } from 'path';
-import * as schema from './schema';
+import { drizzle } from 'drizzle-orm/libsql';
+import 'dotenv/config';
+import { users } from './schema';
 
-// Create the database file in the project root
-const dbPath = join(process.cwd(), 'database.sqlite');
-const sqlite = new Database(dbPath);
+export const db = drizzle(process.env.DB_FILE_NAME!);
 
-export const db = drizzle(sqlite, { schema });
+async function seedData() {
+  const newUsers: (typeof users.$inferInsert)[] = [
+    { name: 'John Doe', email: 'john@example.com' },
+    { name: 'Jane Smith', email: 'jane@example.com' },
+    { name: 'Bob Johnson', email: 'bob@example.com' },
+  ];
 
-// Initialize the database with tables if they don't exist
-export function initDatabase() {
-  // Enable foreign keys
-  sqlite.pragma('foreign_keys = ON');
+  const storedUsers = await db.insert(users).values(newUsers).returning();
 
-  // Create tables if they don't exist
-  sqlite.exec(`
-    CREATE TABLE IF NOT EXISTS users (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      name TEXT NOT NULL,
-      email TEXT NOT NULL UNIQUE,
-      created_at TEXT NOT NULL DEFAULT (datetime('now'))
-    );
-    
-    CREATE TABLE IF NOT EXISTS posts (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      title TEXT NOT NULL,
-      content TEXT NOT NULL,
-      author_id INTEGER NOT NULL,
-      created_at TEXT NOT NULL DEFAULT (datetime('now')),
-      FOREIGN KEY (author_id) REFERENCES users(id)
-    );
-  `);
-
-  console.log('✅ Database initialized');
+  return { message: 'Sample data created successfully', users: storedUsers };
 }
+
+seedData();
