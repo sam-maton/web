@@ -19,24 +19,7 @@ export class AppComponent implements OnInit {
   constructor(private apiService: ApiService) {}
 
   ngOnInit() {
-    this.fetchData();
-  }
-
-  fetchData() {
-    this.loading = true;
-    this.error = null;
-
-    this.apiService.getData().subscribe({
-      next: (data) => {
-        this.apiData = data;
-        this.loading = false;
-      },
-      error: (err) => {
-        this.error = 'Failed to fetch data from API';
-        this.loading = false;
-        console.error('API Error:', err);
-      },
-    });
+    this.fetchUsers();
   }
 
   fetchUsers() {
@@ -46,6 +29,7 @@ export class AppComponent implements OnInit {
     this.apiService.getUsers().subscribe({
       next: (users) => {
         this.users = users;
+        console.log(this.users);
         this.loading = false;
       },
       error: (err) => {
