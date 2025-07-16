@@ -45,7 +45,6 @@
       "executor": "nx:run-commands",
       "options": {
         "command": "drizzle-kit generate",
-        "cwd": "apps/nest-backend",
         "args": [
           "--config=./apps/nest-backend/drizzle.config.ts"
         ]
@@ -55,7 +54,6 @@
       "executor": "nx:run-commands",
       "options": {
         "command": "drizzle-kit migrate",
-        "cwd": "apps/nest-backend",
         "args": [
           "--config=./apps/nest-backend/drizzle.config.ts"
         ]
