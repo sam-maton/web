@@ -2,10 +2,10 @@ import 'dotenv/config';
 import { defineConfig } from 'drizzle-kit';
 
 export default defineConfig({
-  out: './drizzle',
-  schema: './src/database/schema.ts',
+  out: './apps/nest-backend/drizzle',
+  schema: './apps/nest-backend/src/database/schema.ts',
   dialect: 'sqlite',
   dbCredentials: {
-    url: process.env.DB_MIGRATION_DB!,
+    url: process.env.DB_FILE_NAME!,
   },
 });

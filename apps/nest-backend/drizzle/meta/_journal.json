@@ -15,6 +15,13 @@
       "when": 1752593410885,
       "tag": "0001_fine_roulette",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1752654681722,
+      "tag": "0002_lazy_brood",
+      "breakpoints": true
     }
   ]
 }
