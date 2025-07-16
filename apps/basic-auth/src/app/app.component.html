@@ -24,10 +24,6 @@
     <h2>SQLite Database with Drizzle ORM</h2>
 
     <div class="button-group">
-      <button (click)="seedDatabase()" [disabled]="loading" class="seed-btn">
-        {{ loading ? 'Seeding...' : 'Seed Database' }}
-      </button>
-
       <button (click)="fetchUsers()" [disabled]="loading" class="fetch-btn">
         {{ loading ? 'Loading...' : 'Fetch Users' }}
       </button>

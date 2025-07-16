@@ -28,8 +28,4 @@ export class ApiService {
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(`${this.apiUrl}/users`);
   }
-
-  seedData(): Observable<{ message: string }> {
-    return this.http.get<{ message: string }>(`${this.apiUrl}/users/seed`);
-  }
 }

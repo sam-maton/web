@@ -55,23 +55,4 @@ export class AppComponent implements OnInit {
       },
     });
   }
-
-  seedDatabase() {
-    this.loading = true;
-    this.error = null;
-
-    this.apiService.seedData().subscribe({
-      next: (response) => {
-        console.log('Seed response:', response);
-        this.loading = false;
-        // Fetch users after seeding
-        this.fetchUsers();
-      },
-      error: (err) => {
-        this.error = 'Failed to seed database';
-        this.loading = false;
-        console.error('Seed Error:', err);
-      },
-    });
-  }
 }
