@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>{{ title }} App</h1>
+
+  <div class="database-section">
+    <h2>SQLite Database with Drizzle ORM</h2>
+
+    <div class="button-group">
+      <button (click)="fetchUsers()" [disabled]="loading" class="fetch-btn">
+        {{ loading ? 'Loading...' : 'Fetch Users' }}
+      </button>
+    </div>
+
+    <div *ngIf="users.length > 0" class="users-list">
+      <h3>👥 Users from Database</h3>
+      <div class="user-cards">
+        <div *ngFor="let user of users" class="user-card">
+          <h4>{{ user.name }}</h4>
+          <p><strong>Email:</strong> {{ user.email }}</p>
+          <p><strong>ID:</strong> {{ user.id }}</p>
+          <p>
+            <strong>Created:</strong> {{ user.createdAt | date : 'medium' }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
