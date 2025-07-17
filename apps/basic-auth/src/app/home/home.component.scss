@@ -1,0 +1,46 @@
+:host {
+  --border: hsl(0, 0%, 80%);
+
+  --text: hsl(0, 0%, 5%);
+
+  --primary: hsl(45, 90%, 60%);
+  --primary-hover: hsl(45, 90%, 70%);
+  --primary-active: hsl(45, 90%, 50%);
+  --primary-border: hsl(0, 0%, 5%);
+}
+.pub-home {
+  &__header {
+    border-bottom: 1px solid var(--border);
+  }
+
+  &__header-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.25rem 2%;
+  }
+
+  &__main {
+    max-width: 70ch;
+    margin: 0 auto;
+  }
+
+  &__action-button {
+    background-color: var(--primary);
+    border: 1px solid var(--primary-border);
+    text-decoration: none;
+    color: var(--text);
+    padding: 0.7em 1em;
+    border-radius: 0.8em;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  &__action-button:hover {
+    background-color: var(--primary-hover);
+  }
+
+  &__action-button:active {
+    background-color: var(--primary-active);
+  }
+}
